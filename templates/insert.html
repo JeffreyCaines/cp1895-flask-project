@@ -3,5 +3,19 @@
 {% block body %}
 
 <h1>Insert</h1>
-
+<form method = "post" action="/display" enctype="multipart/form-data">
+        <p>Game Name</p>
+        <input type="text" name="game" required>
+        <br><br>
+        <p>Platform</p>
+        <input type="text" name="platform" required>
+        <br><br>
+        <p>Release Year</p>
+        <input type="text" name="year" required>
+        <br><br>
+        <p>Cover Art</p>
+        <input type="file" name="game_img" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
 {% endblock %}
