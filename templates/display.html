@@ -6,6 +6,7 @@
     <ul>
         {% for name, pokemon in pokemon.items() %}
             <li>{{ name }}:
+                <br>
             {% for key, value in pokemon.items() %}
                 {% if key == 'img' %}
                     <image src="{{file_location}}/{{value}}"></image>

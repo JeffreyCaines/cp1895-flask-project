@@ -28,7 +28,9 @@ def insert():
 @app.route('/result', methods=['POST'])
 def display_result():
     pkmn_name = request.form['name']
-    pkmn_type = request.form['type']
+    pkmn_type = request.form.getlist('type')
+    if not pkmn_type[1]:
+        pkmn_type.append("")
     ability = request.form['ability']
     generation = request.form['generation']
     img = request.files['img']
@@ -40,20 +42,32 @@ def display_result():
         img.save(os.path.join(app.config['UPLOAD_PATH'], filename))
 
     if "pokemon" in session:
-        session["pokemon"][pkmn_name] = {'type':pkmn_type, 'ability':ability, 'generation':generation, 'img':img.filename}
+        session["pokemon"][pkmn_name] = {'Primary Type':pkmn_type[0], 'Secondary Type':pkmn_type[1], 'Ability':ability, 'Generation':generation, 'img':img.filename}
     else:
         session["pokemon"] = {}
-        session["pokemon"][pkmn_name] = {'type':pkmn_type, 'ability':ability, 'generation':generation, 'img':img.filename}
+        session["pokemon"][pkmn_name] = {'Primary Type':pkmn_type[0], 'Secondary Type':pkmn_type[1], 'Ability':ability, 'Generation':generation, 'img':img.filename}
 
     flash(f"Added the Pokemon {pkmn_name}!")
     return render_template('insert.html')
 
 @app.route("/remove")
 def remove():
-    return render_template("remove.html")
+    return render_template("remove.html", pokemon=session.get("pokemon", {}))
+
+@app.route("/removed", methods=['POST'])
+def removed():
+    pokemon=session.get("pokemon", {})
+    pkmn_removed = []
+    for key in request.form:
+        pkmn_removed.append(key)
+    for name in pkmn_removed:
+        pokemon.pop(name)
+        flash(f"Removed the Pokemon {name}!")
+    return render_template("remove.html", pokemon=session.get("pokemon", {})) 
 
 @app.route('/display')
 def display():
+    print(session)
     return render_template('display.html', pokemon=session.get("pokemon", {}), file_location=file_save_location)
 
 
