@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Flask Project</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Flask Term Project</h2>
+    <h2>Favourite Pokemon Site</h2>
     <a href="/">Home</a>
     <a href="/insert">Insert</a>
     <a href="/remove">Remove</a>
-    <a href="/display">All Fav Games</a>
+    <a href="/display">List Fav Pokemon</a>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
 
    {% block body %}
 

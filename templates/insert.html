@@ -1,20 +1,21 @@
 {% extends "layout.html" %}
-
+<script src="form_validation.js"></script>
 {% block body %}
-
-<h1>Insert</h1>
-<form method = "post" action="/display" enctype="multipart/form-data">
-        <p>Game Name</p>
-        <input type="text" name="game" required>
+    <h3>Enter your favourite Pokemon</h3>
+    <form method = "post" action="/result" enctype="multipart/form-data">
+        <p>Name</p>
+        <input type="text" name="name" required>
         <br><br>
-        <p>Platform</p>
-        <input type="text" name="platform" required>
+        <p>Type</p>
+        <input type="text" name="type" required>
         <br><br>
-        <p>Release Year</p>
-        <input type="text" name="year" required>
+        <p>Ability</p>
+        <input type="text" name="ability" required>
         <br><br>
-        <p>Cover Art</p>
-        <input type="file" name="game_img" required>
+        <p>Release Generation</p>
+        <input type="text" name="generation" required>
+        <br><br>
+        <input type="file" name="img" required>
         <br><br>
         <input type="submit" value="Submit">
     </form>

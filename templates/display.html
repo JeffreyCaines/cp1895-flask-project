@@ -2,20 +2,21 @@
 
 {% block body %}
 
-<h1>Display Games</h1>
-<ul>
-    {% for name, game in games.items() %}
-        <li>{{name}}<br>
-        {% for key, value in game.items() %}
-            {% if key == "img" %}
-                <img src="{{file_path}}{{value}}"></img>
-            {% else %}
-                <span>{{key}}: {{value}}</span>
-                <br>
-            {% endif %}
+<h2>List of all Favourite Pokemon</h2>
+    <ul>
+        {% for name, pokemon in pokemon.items() %}
+            <li>{{ name }}:
+            {% for key, value in pokemon.items() %}
+                {% if key == 'img' %}
+                    <image src="{{file_location}}/{{value}}"></image>
+                {% else %}
+                    <span>{{key}} : {{value}}</span>
+                    <br>
+                {% endif %}
+
+             {% endfor %}
+            </li>
         {% endfor %}
-        </li>
-    {% endfor %}
-</ul>
+    </ul>
 
 {% endblock %}
