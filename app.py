@@ -29,6 +29,9 @@ def insert():
 def display_result():
     pkmn_name = request.form['name']
     pkmn_type = request.form.getlist('type')
+    # if pkmn_type.length() > 2:
+    #     pass
+    #     # remove exess list contents
     if not pkmn_type[1]:
         pkmn_type.append("")
     ability = request.form['ability']

@@ -1,31 +1,31 @@
 {% extends "layout.html" %}
-<script src="form_validation.js"></script>
+
 {% block body %}
     <h3>Enter your favourite Pokemon</h3>
-    <form method = "post" action="/result" enctype="multipart/form-data">
+    <form method="post" action="/result" enctype="multipart/form-data">
         <p>Name</p>
         <input type="text" name="name" id="name" required>
         <br><br>
         <p>Type (Max 2)</p>
         <select name="type" id="type" multiple size="18" required>
-            <option value ="normal">Normal</option>
-            <option value ="fire">Fire</option>
-            <option value ="water">Water</option>
-            <option value ="electric">Electric</option>
-            <option value ="grass">Grass</option>
-            <option value ="ice">Ice</option>
-            <option value ="fighting">Fighting</option>
-            <option value ="poison">Poison</option>
-            <option value ="ground">Ground</option>
-            <option value ="flying">Flying</option>
-            <option value ="psychic">psychic</option>
-            <option value ="bug">Bug</option>
-            <option value ="rock">Rock</option>
-            <option value ="ghost">Ghost</option>
-            <option value ="dragon">Dragon</option>
-            <option value ="dark">Dark</option>
-            <option value ="steel">Steel</option>
-            <option value ="fairy">Fairy</option>
+            <option class="multiselect" value="normal">Normal</option>
+            <option class="multiselect" value="fire">Fire</option>
+            <option class="multiselect" value="water">Water</option>
+            <option class="multiselect" value="electric">Electric</option>
+            <option class="multiselect" value="grass">Grass</option>
+            <option class="multiselect" value="ice">Ice</option>
+            <option class="multiselect" value="fighting">Fighting</option>
+            <option class="multiselect" value="poison">Poison</option>
+            <option class="multiselect" value="ground">Ground</option>
+            <option class="multiselect" value="flying">Flying</option>
+            <option class="multiselect" value="psychic">Psychic</option>
+            <option class="multiselect" value="bug">Bug</option>
+            <option class="multiselect" value="rock">Rock</option>
+            <option class="multiselect" value="ghost">Ghost</option>
+            <option class="multiselect" value="dragon">Dragon</option>
+            <option class="multiselect" value="dark">Dark</option>
+            <option class="multiselect" value="steel">Steel</option>
+            <option class="multiselect" value="fairy">Fairy</option>
         </select>
         <br><br>
         <p>Ability</p>
