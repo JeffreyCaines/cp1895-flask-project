@@ -1,11 +1,25 @@
 body{
     background-color: darkcyan;
     color: black;
+    background-image: url("https://img.pokemondb.net/sprites/scarlet-violet/normal/fomantis.png");
 }
 
 a{
     font-size: 1.1em;
     font-weight: 600;
+}
+
+p{
+    font-size: 1.4em;
+    font-weight: 600
+}
+
+ul{
+    background-color: rgba(255,150,70,0.8);
+}
+
+input{
+    background-color: rgb(242, 205, 205);
 }
 
 input:invalid {
@@ -17,6 +31,11 @@ border: 2px solid black;
 }
 
 .col{
+    background-color: rgb(200, 134, 20);
+    border: 2px solid black;
+}
+
+.col-md-auto{
     background-color: rgb(200, 134, 20);
     border: 2px solid black;
 }

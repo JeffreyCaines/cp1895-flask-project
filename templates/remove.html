@@ -1,16 +1,23 @@
 {% extends "layout.html" %}
 
 {% block body %}
+<br>
+<div class="container text-center">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto"><h2>Which Pokemon would you like to remove?</h2></div>
+        </div>    
 
-<p>Which Pokemon would you like to remove?</p>
-    <form method="post" action="/removed">
+    <form method="post" action="/remove">
         <ul>
             {% for name, pokemon in pokemon.items() %}
+            <div class="checkbox">
                 <input type="checkbox" id="{{ name }}" name="{{ name }}" value="{{ name }}">
-                <label for="{{ name }}">{{ name }}</label><br>
+                <label for="{{ name }}">{{ name }}</label>
+            </div>
+            <br>
             {% endfor %}
-        </ul>
         <input type="submit" value="Submit">
+        </ul>
     </form>
-
+</div>
 {% endblock %}
