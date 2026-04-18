@@ -1,6 +1,6 @@
-To get started download python3 https://www.python.org/downloads/
-Next install git https://git-scm.com/
-Next open your terminal with git installed and run:
+To get started download python3 https://www.python.org/downloads/  
+Next install git https://git-scm.com/  
+Next open your terminal with git installed and run:  
 ```sh
 git@github.com:JeffreyCaines/cp1895-flask-project.git
 ```
